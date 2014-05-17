@@ -1,5 +1,9 @@
 <?php
 
+namespace Clue\Socks;
+
+use Exception;
+
 /**
  * class implementing the SOCKS 4a protocol
  *

@@ -1,4 +1,9 @@
 <?php
+
+use Clue\Socks\Socks4;
+use Clue\Socks\Socks4a;
+use Clue\Socks\Socks5;
+
 require_once (__DIR__ . '/../src/Socks4.class.php');
 require_once (__DIR__ . '/../src/Socks4a.class.php');
 require_once (__DIR__ . '/../src/Socks5.class.php');
