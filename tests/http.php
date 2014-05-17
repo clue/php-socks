@@ -36,7 +36,8 @@ class Socks4Test extends PHPUnit_Framework_TestCase
 
     protected function httpIpv4($socks)
     {
-        return $this->http($socks, '209.85.148.104'); // nslookup google.com (2011-05-30)
+        // nslookup google.com (2011-05-30)
+        return $this->http($socks, '209.85.148.104');
     }
 
     protected function http($socks, $host)

@@ -42,9 +42,14 @@ class Socks4a extends Socks4
     {
         $stream = $this->streamConnect();
 
-        $ip = ip2long($hostname); // do not resolve hostname. only try to convert to IP
-        $packet = pack('C2nNC', 0x04, $method, $port, $ip === false ? 1 : $ip, 0x00); // send IP or (0.0.0.1) if invalid
-        if ($ip === false) { // host is not a valid IP => send along hostname
+        // do not resolve hostname. only try to convert to IP
+        $ip = ip2long($hostname);
+
+        // send IP or (0.0.0.1) if invalid
+        $packet = pack('C2nNC', 0x04, $method, $port, $ip === false ? 1 : $ip, 0x00);
+
+        // host is not a valid IP => send along hostname
+        if ($ip === false) {
             $packet .= $hostname . pack('C', 0x00);
         }
 

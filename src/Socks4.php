@@ -133,7 +133,6 @@ class Socks4
      */
     protected function streamRead($stream, $len)
     {
-        // echo '[read '.$len.':';
         $ret = '';
         while (strlen($ret) < $len) {
             $part = fread($stream, $len - strlen($ret));
@@ -141,9 +140,7 @@ class Socks4
                 throw new Exception('Unable to read from stream');
             }
             $ret .= $part;
-            // echo '['.$part.']';
         }
-        // echo ']';
         return $ret;
     }
 
@@ -159,16 +156,13 @@ class Socks4
      */
     protected function streamWrite($stream, $string)
     {
-        // echo '[write '.$string.':';
         while ($string !== '') {
             $l = fwrite($stream, $string);
             if ($l === false || $l === 0) {
                 throw new Exception('Unable to write to stream');
             }
             $string = (string) substr($string, $l);
-            // echo '[sent '.$l.', remaining: '.$string.']';
         }
-        // echo ']';
         return $this;
     }
 
@@ -202,12 +196,14 @@ class Socks4
         $ret = NULL;
         if (is_resource($this->server)) {
             $ret = $this->server;
-            $this->server = NULL; // stream can not be re-used
+            // stream can not be re-used
+            $this->server = NULL;
             return $ret;
         } elseif ($this->server === NULL) {
             throw new Exception('SOCKS was initialized with an established socket which can not be re-used for multiple connections');
         } else {
-            $ret = fsockopen($this->server, $this->serverPort); // create a fresh connection
+            // create a fresh connection
+            $ret = fsockopen($this->server, $this->serverPort);
             if ($ret === false) {
                 throw new Exception('Unable to connect to SOCKS server');
             }
