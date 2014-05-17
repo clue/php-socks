@@ -4,9 +4,7 @@ use Clue\Socks\Socks4;
 use Clue\Socks\Socks4a;
 use Clue\Socks\Socks5;
 
-require __DIR__ . '/../vendor/autoload.php';
-
-class Socks4Test extends PHPUnit_Framework_TestCase
+class HttpTest extends TestCase
 {
     public function testSocks4()
     {
