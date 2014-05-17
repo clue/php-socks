@@ -4,9 +4,7 @@ use Clue\Socks\Socks4;
 use Clue\Socks\Socks4a;
 use Clue\Socks\Socks5;
 
-require_once (__DIR__ . '/../src/Socks4.class.php');
-require_once (__DIR__ . '/../src/Socks4a.class.php');
-require_once (__DIR__ . '/../src/Socks5.class.php');
+require __DIR__ . '/../vendor/autoload.php';
 
 class Socks4Test extends PHPUnit_Framework_TestCase
 {

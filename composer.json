@@ -1,0 +1,16 @@
+{
+    "name": "clue/socks",
+    "description": "Simple SOCKS proxy client (SOCKS4, SOCKS4a and SOCKS5)",
+    "keywords": ["socks client", "tcp tunnel", "socks protocol"],
+    "homepage": "https://github.com/clue/php-socks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Lück",
+            "email": "christian@lueck.tv"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Clue\\Socks\\": "src"}
+    }
+}
