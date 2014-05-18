@@ -29,13 +29,12 @@ class HttpTest extends TestCase
 
     protected function httpHostname($socks)
     {
-        return $this->http($socks, 'google.com');
+        return $this->http($socks, 'www.google.com');
     }
 
     protected function httpIpv4($socks)
     {
-        // nslookup google.com (2011-05-30)
-        return $this->http($socks, '209.85.148.104');
+        return $this->http($socks, gethostbyname('www.google.com'));
     }
 
     protected function http($socks, $host)
