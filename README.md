@@ -1,3 +1,19 @@
+# MAINTENANCE MODE
+
+This repository is currently in the process of being split up into a simple blocking client implementation and an async non-blocking client and server implementation. See [issue #2](https://github.com/clue/php-socks/issues/2) for details.
+
+* If you're already using this library in legacy v0.4,
+  consider upgrading to [clue/socks-react](https://github.com/clue/php-socks-react).
+  Upgrading should take no longer than 10 minutes, see the CHANGELOG.md for details.
+
+* If you're looking for an async non-blocking client and server implementation,
+  head over to [clue/socks-react](https://github.com/clue/php-socks-react).
+
+* If you're looking for the simple blocking client implementation,
+  your best bet is to wait for [issue #2](https://github.com/clue/php-socks/issues/2) to be completed. Feel like   contributing? :)
+
+The following description applies to legacy v0.4, which has already been migrated to [clue/socks-react](https://github.com/clue/php-socks-react).
+
 # clue/socks - SOCKS client and server [![Build Status](https://travis-ci.org/clue/php-socks.svg?branch=master)](https://travis-ci.org/clue/php-socks)
 
 Async SOCKS client library to connect to SOCKS4, SOCKS4a and SOCKS5 proxy servers,
